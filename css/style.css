@@ -1,0 +1,66 @@
+body {
+  background: white;
+  font-family: "Lora", serif;
+}
+
+p {
+  font-size: 21px;
+}
+
+#content {
+  max-width: 750px;
+  width: 60%;
+  margin: auto;
+  background: inherit;
+  padding: 20px;
+  line-height: 1.6em;
+}
+
+img {
+  width: 100%;
+}
+
+small {
+  text-align: center;
+  display: block;
+  color: #919191;
+  font-size: .6em;
+}
+
+.avatar {
+  width: 80px;
+  border-radius: 100%;
+}
+
+button {
+  border: 1px solid #29C181;
+  color: #1C9963;
+  background-color: transparent;
+  border-radius: 15px;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 0 10px;
+}
+
+.inline-block-element {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10px;
+}
+
+.dots {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+.follow-text {
+  color: grey;
+  font-size: .80em;
+  float: right;
+}
+
+.sign-in-up-text {
+  color: #22975E;
+  font-size: .80em;
+  float: right;
+}

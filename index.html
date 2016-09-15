@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Medium Blog Layout</title>
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+  </head>
+  <body>
+    <div id="content">
+      <p><span class="follow-text">Follow</span><span class="sign-in-up-text"> Sign in / Sign up</span></p>
+      <br>
+
+      <img class="avatar" src="images/avatar.jpeg" alt="avatar" />
+      <div class="inline-block-element">
+        <span>TJ Holowaychuk</span>
+        <button type="button" name="follow_button">Follow</button>
+        <br>
+        <span>Code. Photography. Art.</span>
+        <br>
+        <span>Jun 16 · 7 min read</span>
+      </div>
+
+      <h1>Introducing Apex Ping</h1>
+      <p>
+        I’d like to introduce Apex Ping! A minimalistic, but powerful uptime & performance monitoring service for websites and APIs. In this post I’ll cover features of Apex Ping, why I chose to build it first, and a few things I learned in the process. In future posts I’ll be detailing the implementation for anyone who is curious.
+      </p>
+      <p>
+        I soft-launched Ping about a month ago, built almost 100% on AWS Lambda, with 500 users it has already detected over a million errors, and performed over 25 million checks. Big thanks to the early adopters who have checked it out!
+      </p>
+      <img src="images/tj_blog_img1.png" alt="Image 1" />
+      <div class="dots">
+        &#8230;
+      </div>
+
+      <h1>The product</h1>
+      <p>
+        I’ve seen first-hand how embarrassing it can be when customers find out your product is having issues before you do, naturally this can translate to customers bailing on your product. Ensuring your site, app, or API is stable and performant is critical.
+      </p>
+      <p>
+        Apex Ping helps by making sure your team is notified when there’s a performance regression, or when your end-point is down or unresponsive. Often people rely on “it works for me”, but Apex Ping’s reporting can help uncover the full story.
+      </p>
+
+      <h1>Powerful monitoring</h1>
+      <p>
+        Unlike some other uptime monitoring services, which only support HEAD requests, Apex Ping support header fields and bodies as well. This allows you to test APIs, caching behaviour, and serving time, as well as the typical connection latency.
+      </p>
+      <p>
+        The checks listing displays the uptime, mean response, Apdex score, and Adpex score throughout the day, week, or month. The Apdex score generalizes the user experience, summarizing response time satisfaction and error responses.
+      </p>
+      <img src="images/tj_blog_img2.png" alt="Image 2" />
+      <p>
+        <small>Checks overview</small>
+      </p>
+
+      <h1>Global checks</h1>
+      <p>
+        Requests or “checks” are performed from a number of selectable PoPs (Point of Presence), giving you a glance at the customer experience all over the world. Hovering a PoP provides you with the breakdown, and coloring indicates their relative health so you can instantly see if a region’s availability or performance is degraded.
+      </p>
+      <img src="images/tj_blog_img3.png" alt="Image 3" />
+      <p>
+        <small>Geographical view</small>
+      </p>
+
+      <h1>Latency distribution</h1>
+      <p>
+        When latency is a reflection of the user-experience, it’s important not to ignore the outliers. The Latency view provides you with an intuitive look at distribution throughout the selected time period, where the intensity of the heatmap represents the number of check’s within the given duration.
+      </p>
+      <img src="images/tj_blog_img4.png" alt="Image 4" />
+      <p>
+        <small>Latency heatmap</small>
+      </p>
+
+      <h1>Errors & Apdex</h1>
+      <p>
+        The Apdex (Application Performance Index) score quantifies the user-experience based on a configured target latency. It effectively lets you know how far you are from hitting your mark, you should strive for a perfect 1.0!
+      </p>
+      <img src="images/tj_blog_img5.png" alt="Image 5" />
+      <p>
+        <small>Apdex & Errors timeseries</small>
+      </p>
+
+      <h1>Timings</h1>
+      <p>
+        Requests are comprised of several components such as DNS lookup, TCP connection, TLS handshake, followed by the response itself. If you’re experiencing performance issues the Timings view can help you out, showing you the distribution of each component.
+      </p>
+      <img src="images/tj_blog_img6.png" alt="Image 6" />
+      <p>
+        <small>Connection timing histograms</small>
+      </p>
+
+      <h1>Flexible alerting</h1>
+      <p>
+        Apex Ping’s alerting lets you create alerts for downtime, latency, and regressions. You can receive alerts via email, webhook, or Slack, with more to come!
+      </p>
+      <img src="images/tj_blog_img7.png" alt="Image 7" />
+      <p>
+        <small>Alerts listing</small>
+      </p>
+      <p>
+        Since you can create a number of alerts, you may send reports to distinct Slack teams & channels to keep specific teams informed.
+      </p>
+      <img src="images/tj_blog_img8.png" alt="Image 8" />
+
+      <h1>Weekly reports</h1>
+      <p>
+        Receive weekly reports in your inbox to stay current with your checks. Get quick access to the Apdex score, uptime, downtime, mean and 95th response times. Each check’s relative performance is highlighted on the left.
+      </p>
+      <img src="images/tj_blog_img9.png" alt="Image 9" />
+      <p>
+        <small>Weekly digest email</small>
+      </p>
+      <p>
+        More coming soon here as well!
+      </p>
+
+      <h1>Nerdy features</h1>
+      <p>
+        What is a nerdy tool without some nerdy features? Apex Ping allows you to paste cURL commands or URLs to populate a new check. This is especially great in combination with Chrome’s “Copy as cURL” feature found in the network tab.
+      </p>
+      <p>
+        On the checks page try pasting a cURL command such as the following:
+      </p>
+      <h1 style="color: red">FIX THIS AREA - REMOVE ME</h1>
+      <p class="code">
+        curl -X PATCH
+          -d ‘{ “name”: “Tobi” }’
+          -H “Content-Type: application/json”
+          -H “Accept-Encoding: gzip”
+          https://api.example.com/pets/tobi
+      </p>
+      <p>
+        You’ll see that Apex Ping populates a check that is ready to go, complete with method, protocol, header fields, and body.
+      </p>
+      <img src="images/tj_blog_img10.png" alt="Image 10" />
+      <p>
+        <small>Check populated via cURL command</small>
+      </p>
+      <img src="images/tj_blog_img11.png" alt="Image 11" />
+      <p>
+        <small>Check header fields populated via cURL command</small>
+      </p>
+      <div class="dots">
+        &#8230;
+      </div>
+
+      <h1>Why build Ping?</h1>
+      <p>
+        As I mentioned in my Apex Software Inc announcement post, I plan on building many products, as a single-person team. Where better to start than a tool that can monitor itself and future products?
+      </p>
+      <p>
+        Starting with something simple let me focus on other aspects of starting a business as well, instead of spending a year working on a giant product.
+      </p>
+      <div class="dots">
+        &#8230;
+      </div>
+
+      <h1>Things I’ve learned</h1>
+      <p>
+        In this section I’ll discuss things I’ve learned so far, primarily non-technical since I’ll be covering that side of things in upcoming posts!
+      </p>
+      <h2>Design early</h2>
+      <p>
+        A critical mistake I made was designing “on-the-fly”, aka making things up as I went. Not only did this slow down development, but it caused me to change the design multiple times throughout. This in turn altered backend requirements, so as you can imagine this is just plain awful ☺. I think it’s good to prototype so you can get a feel of what things could be, but once you start executing it’s much better if you don’t get side-tracked by unrelated decisions.
+      </p>
+      <p>
+        I don’t consider myself a designer by any means, but it’s pretty fun and rewarding to come up with something that you’re happy with.
+      </p>
+      <h2>Use real data for visualizations</h2>
+      <p>
+        The initial design & implementation I built was designed around faux data. The visualizations I had made looked interesting with this data, but were actually very boring once I got real data into them! Get your functioning backend producing data to as early as you can to get a real sample to work with, this will help you uncover edge-cases as well.
+      </p>
+      <h2>Defer work-arounds</h2>
+      <p>
+        In some cases you may be creating work-arounds for certain issues. A good example in my case is that I originally deployed the API in us-east-1 for AWS ACM (free SSL certs), but the cross-talk with Elasticsearch introduced substantial latency, so I migrated to us-west-2, and started to set up letsencrypt manually. A few days later AWS released ACM support for us-west-2. When you have a scenario like this where you know support is coming at some point, and it’s not critical now, it’s best to wait.
+      </p>
+      <h2>Deal with legal issues early</h2>
+      <p>
+        Being new to the business world I had heard that incorporating would take roughly a week. In practice, between finding the right people, registering the name, applying for incorporation, conversations, setting up a bank account and coming up with licensing the entire process took over a month.
+      </p>
+      <p>
+        Delaying this also created additional work since I had to transfer the existing assets and expenses into the company. I would definitely keep my eye on Stripe’s Atlas if you’re looking to do similar, their program should really streamline this process.
+      </p>
+      <h2>Make every error actionable</h2>
+      <p>
+        I’ll talk more about my logging approach in future posts, but you should try very hard to make every error actionable, otherwise it’s easy to fall into a trap of ignoring them in the future. Not a single error goes through this product unnoticed, they end up directly in my inbox.
+      </p>
+      <h2>Time management</h2>
+      <p>
+        I had really poor time management on this project, but that’s one of the perks of working for yourself ☺, motivation is tough with a non-existent team. I recently started using the Pomodoro technique again to try and get back in the rhythm of a regular work day, and it definitely helps you have a better sense of time.
+      </p>
+      <p>
+        The app I’m using on OSX is called “Pomodoro One”.
+      </p>
+      <h2>We’re very privileged</h2>
+      <p>
+        Although I’m bootstrapping with my own money I feel incredibly privileged to even have the savings and time to do this sort of thing. I’ve still been struggling with burnout from nearly a year ago, but in any other industry I would be beyond bankrupt right now. Thank you VCs for your crazy gambles!
+      </p>
+      <div class="dots">
+        &#8230;
+      </div>
+
+      <h1>What’s next</h1>
+      <p>
+        My plans for now are to continue adding features, polishing the UI, increasing performance, improving front-end workflow, as well as hacking on prototypes for future products.
+      </p>
+      <p>
+        I’ve never been a fan of spammy startups so I likely won’t be firing out many emails, so If you’re curious about product & technical updates make sure to follow the Apex Software publication!
+      </p>
+
+      <br>
+      <img class="avatar" src="images/avatar.jpeg" alt="avatar" />
+      <div class="inline-block-element">
+        <span>TJ Holowaychuk</span>
+        <button type="button" name="follow_button">Follow</button>
+        <br>
+        <span>Code. Photography. Art.</span>
+      </div>
+    </div>
+  </body>
+</html>
